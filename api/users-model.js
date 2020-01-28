@@ -2,7 +2,13 @@ const database = require("../data/dbConfig.js");
 
 module.exports = {
     add,
-    findBy
+    findBy,
+    find
+}
+
+function find() {
+    return database("users as u")
+        .select("u.*");
 }
 
 function add(user) {
